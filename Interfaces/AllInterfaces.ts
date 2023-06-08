@@ -3,4 +3,5 @@ export interface UserData extends Document {
   email: string;
   password: string;
   isVerified: boolean;
+  token: string;
 }
