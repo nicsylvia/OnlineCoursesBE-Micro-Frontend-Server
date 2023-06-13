@@ -23,4 +23,15 @@ export const UsersRegistration = async (req: Request, res: Response) => {
     token,
     isVerified: false,
   });
+
+  if (Users) {
+    return res.status(201).json({
+      message: `${name} registered successfully`,
+      data: Users,
+    });
+  } else {
+    return res.status(400).json({
+      message: "Couldn't create users",
+    });
+  }
 };
